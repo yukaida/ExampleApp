@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_navi_graph"
+    app:startDestination="@id/revertImageFragment">
+
+    <fragment
+        android:id="@+id/revertImageFragment"
+        android:name="com.yukaida.exampleapplication.imageFragment.RevertImageFragment"
+        android:label="fragment_revert_image"
+        tools:layout="@layout/fragment_revert_image" />
+</navigation>
