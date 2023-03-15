@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.core.view.WindowCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yukaida.exampleapplication.databinding.ActivityMainBinding
+import com.yukaida.exampleapplication.image.MainTypeImageAdapter
 
 class MainActivity : AppCompatActivity() {
     private val vb by lazy {

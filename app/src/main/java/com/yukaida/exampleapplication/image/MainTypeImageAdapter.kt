@@ -1,4 +1,4 @@
-package com.yukaida.exampleapplication
+package com.yukaida.exampleapplication.image
 
 import android.content.Context
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.yukaida.exampleapplication.R
 
 class MainTypeImageAdapter(private val context: Context, private val dataList: MutableList<String>) :
     RecyclerView.Adapter<MainTypeImageAdapter.TypeImageHolder>() {

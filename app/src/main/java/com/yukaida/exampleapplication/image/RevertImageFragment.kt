@@ -1,4 +1,4 @@
-package com.yukaida.exampleapplication.imageFragment
+package com.yukaida.exampleapplication.image
 
 import android.graphics.*
 import android.os.Bundle

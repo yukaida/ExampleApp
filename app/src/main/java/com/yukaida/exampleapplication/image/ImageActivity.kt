@@ -1,4 +1,4 @@
-package com.yukaida.exampleapplication
+package com.yukaida.exampleapplication.image
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
