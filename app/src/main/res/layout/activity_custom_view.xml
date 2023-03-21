@@ -9,9 +9,14 @@
     android:paddingTop="32dp"
     tools:context=".view.CustomViewActivity">
 
-    <com.yukaida.exampleapplication.view.CustomView
-        android:id="@+id/customView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!--    <com.yukaida.exampleapplication.view.CanvasView-->
+    <!--        android:id="@+id/customView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+        <com.yukaida.exampleapplication.view.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
 
 </LinearLayout>

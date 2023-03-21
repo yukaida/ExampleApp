@@ -5,17 +5,15 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
-import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.blue
 import com.yukaida.exampleapplication.R
-import com.yukaida.exampleapplication.utils.toDp
 import com.yukaida.exampleapplication.utils.toPx
 
-class CustomView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+//例举 canvas的一些使用方法
+class CanvasView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -105,6 +103,11 @@ class CustomView(context: Context, attrs: AttributeSet) : View(context, attrs) {
                     color = Color.BLUE
                     strokeWidth = 32f
                     style = Paint.Style.STROKE
+                })
+
+                drawText("CanvasView", 220f.toPx(context), 80f, Paint().apply {
+                    color = Color.YELLOW
+                    textSize=80f
                 })
 
             }

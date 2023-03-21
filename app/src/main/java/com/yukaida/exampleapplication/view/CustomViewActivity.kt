@@ -23,11 +23,5 @@ class CustomViewActivity : AppCompatActivity() {
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
-        with(vb) {
-            customView.setOnClickListener {
-                val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
-                startActivityForResult(intent, 1)
-            }
-        }
     }
 }
