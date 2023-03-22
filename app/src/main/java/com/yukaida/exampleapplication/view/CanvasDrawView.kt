@@ -13,7 +13,7 @@ import com.yukaida.exampleapplication.R
 import com.yukaida.exampleapplication.utils.toPx
 
 //例举 canvas的一些使用方法
-class CanvasView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+class CanvasDrawView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
