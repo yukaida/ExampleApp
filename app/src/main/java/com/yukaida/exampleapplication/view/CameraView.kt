@@ -19,7 +19,7 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         with(canvas) {
             val bitmapRes =
 //                BitmapFactory.decodeResource(context.resources, R.drawable.cat_square)
-                BitmapFactory.decodeResource(context.resources, R.drawable.letter256)
+                BitmapFactory.decodeResource(context.resources, R.drawable.maps)
 
             val bitmapWidth = bitmapRes.width.toFloat()
             val bitmapHeight = bitmapRes.height.toFloat()
@@ -28,8 +28,10 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             val camera = Camera()
             camera.save()
 
+            clipRect(0f, bitmapHeight / 2, bitmapWidth + 100f+50f, bitmapHeight+50f)
+
             //z轴默认-8f
-//            camera.setLocation(0f,0f,-8f)
+            camera.setLocation(0f, 0f, -15f)
 //            camera.setLocation(0f,0f,-8f)
 
 //            camera.rotateY(45f)
@@ -39,18 +41,24 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
 
 
-            canvas.translate((bitmapRes.width / 2).toFloat(), (bitmapRes.height / 2).toFloat())
+            canvas.translate(
+                (bitmapRes.width / 2).toFloat() + 150f,
+                (bitmapRes.height / 2).toFloat()
+            )
 
-            camera.rotateX(45f)
+            camera.rotateX(30f)
             camera.applyToCanvas(this)
 
-            canvas.translate(-(bitmapRes.width / 2).toFloat(), -(bitmapRes.height / 2).toFloat())
+            canvas.translate(
+                -(bitmapRes.width / 2).toFloat() - 150f,
+                -(bitmapRes.height / 2).toFloat()
+            )
 
 //            canvas.drawRect(100f, 100f, 200f, 200f, Paint().apply {
 //                color = Color.WHITE
 //            })
 
-            canvas.drawBitmap(bitmapRes, 0f, 0f, Paint())
+            canvas.drawBitmap(bitmapRes, 150f, 0f, Paint())
 
 
             camera.restore()
@@ -73,6 +81,28 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 color = Color.GREEN
                 strokeWidth = 8f
             })
+//----------------------------------------------------------
+            save()
+            camera.save()
+            clipRect(0f, 0f, bitmapWidth + 100f+100f, bitmapHeight / 2)
+
+            canvas.translate(
+                (bitmapRes.width / 2).toFloat() + 150f,
+                (bitmapRes.height / 2).toFloat()
+            )
+
+            camera.rotateX(-15f)
+            camera.applyToCanvas(this)
+
+            canvas.translate(
+                -(bitmapRes.width / 2).toFloat() - 150f,
+                -(bitmapRes.height / 2).toFloat()
+            )
+
+            canvas.drawBitmap(bitmapRes, 150f, 0f, Paint())
+
+            camera.restore()
+            canvas.restore()
 
         }
     }
