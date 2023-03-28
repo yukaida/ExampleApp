@@ -8,10 +8,9 @@ import android.graphics.Matrix
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
-import androidx.core.view.marginBottom
 import com.yukaida.exampleapplication.R
 
-class CameraTestView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+class CameraMatrixView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
@@ -43,10 +42,12 @@ class CameraTestView(context: Context, attrs: AttributeSet) : View(context, attr
             val matrix = Matrix()
             matrix.reset()
             camera.rotateX(30f)
-            camera.getMatrix(matrix)
+            camera.getMatrix(matrix)//计算旋转之后的matrix矩阵并赋值 比如这时候矩阵直行顺序是[ 旋转 ]
 
-            matrix.postTranslate((150f + bWidth / 2), bHeight / 2)
-            matrix.preTranslate(-(150f + bWidth / 2), -bHeight / 2)
+            matrix.postTranslate((150f + bWidth / 2), bHeight / 2)//向矩阵后插入运算B  得到[ 旋转 B ]
+            matrix.preTranslate(-(150f + bWidth / 2), -bHeight / 2)//向矩阵前插入预算A  得到[ A 选择 B]
+
+            //这里其实程序都是按重上往下执行  但是为了便于理解减少心智负担 假定camera canvas坐标系位置不变  看成图像在移动  从下往上推演执行顺序
 
             canvas.concat(matrix)
 
