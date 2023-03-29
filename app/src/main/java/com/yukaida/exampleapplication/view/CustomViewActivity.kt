@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.animation.*
+import android.widget.SeekBar
 import androidx.core.view.WindowCompat
 import com.yukaida.exampleapplication.R
 import com.yukaida.exampleapplication.databinding.ActivityCustomViewBinding
@@ -105,5 +106,54 @@ class CustomViewActivity : AppCompatActivity() {
 
         }
 
+
+        with(vb) {
+            seekbarWidth.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(
+                    seekBar: SeekBar?,
+                    progress: Int,
+                    fromUser: Boolean
+                ) {
+                    Log.d(
+                        TAG,
+                        "onProgressChanged() called with: seekBar = $seekBar, progress = $progress, fromUser = $fromUser"
+                    )
+                    if (progress > 10) {
+                        measureLayoutView.widthInput = progress*10
+                    }
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                }
+
+                override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                }
+
+            })
+
+            seekbarHeight.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(
+                    seekBar: SeekBar?,
+                    progress: Int,
+                    fromUser: Boolean
+                ) {
+                    Log.d(
+                        TAG,
+                        "onProgressChanged() called with: seekBar = $seekBar, progress = $progress, fromUser = $fromUser"
+                    )
+                    if (progress > 10) {
+                        measureLayoutView.heightInput = progress*10
+                    }
+                }
+
+                override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                }
+
+                override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                }
+
+            })
+
+        }
     }
 }
