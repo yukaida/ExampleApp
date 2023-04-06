@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,47 +10,84 @@
     android:paddingTop="32dp"
     tools:context=".view.CustomViewActivity">
 
-    <!--    <com.yukaida.exampleapplication.view.CanvasView-->
-    <!--        android:id="@+id/customView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent" />-->
-
-    <com.yukaida.exampleapplication.view.CircleProgressView
-        android:id="@+id/circleView"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/strawberry64" />
-
-
-    <androidx.appcompat.widget.AppCompatSeekBar
-        android:id="@+id/seekbarWidth"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_margin="16dp"
-        android:max="100"
-        android:progress="10" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--    <com.yukaida.exampleapplication.view.CanvasView-->
+        <!--        android:id="@+id/customView"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent" />-->
+
+        <com.yukaida.exampleapplication.view.customView.CustomPieView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="8dp" />
+
+        <com.yukaida.exampleapplication.view.customView.TestView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
 
 
-    <androidx.appcompat.widget.AppCompatSeekBar
-        android:id="@+id/seekbarHeight"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_margin="16dp"
-        android:max="100"
-        android:outlineAmbientShadowColor="@color/green"
-        android:outlineSpotShadowColor="@color/green"
-        android:progress="10" />
+        <com.yukaida.exampleapplication.view.customView.CvProgressBar
+            android:id="@+id/cvProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-    <com.yukaida.exampleapplication.view.layout.MeasureLayoutView
-        android:id="@+id/measureLayoutView"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp" />
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/imageFilterView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:altSrc="@drawable/strawberry64"
+            app:blendSrc="@color/green"
+            app:brightness="1"
+            app:contrast="1"
+            app:crossfade="0.3"
+            app:imageRotate="180"
+            app:round="32dp"
+            app:srcCompat="@drawable/cat_square" />
+
+        <com.yukaida.exampleapplication.view.CircleProgressView
+            android:id="@+id/circleView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/strawberry64" />
 
 
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seekbarWidth"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_margin="16dp"
+            android:max="100"
+            android:progress="10" />
+
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/seekbarHeight"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_margin="16dp"
+            android:max="100"
+            android:outlineAmbientShadowColor="@color/green"
+            android:outlineSpotShadowColor="@color/green"
+            android:progress="10" />
+
+        <com.yukaida.exampleapplication.view.layout.MeasureLayoutView
+            android:id="@+id/measureLayoutView"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

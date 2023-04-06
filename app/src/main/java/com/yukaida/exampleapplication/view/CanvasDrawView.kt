@@ -27,18 +27,18 @@ class CanvasDrawView(context: Context, attrs: AttributeSet) : View(context, attr
         super.onDraw(canvas)
 
         canvas?.drawCircle(
-            100f.toPx(context),
-            100f.toPx(context),
-            100f.toPx(context),
+            100f.toPx(),
+            100f.toPx(),
+            100f.toPx(),
             Paint().apply {
                 color = ContextCompat.getColor(context, R.color.green)
                 isAntiAlias = true
             })
 
         canvas?.drawRoundRect(
-            RectF(0f.toPx(context), 250f.toPx(context), 200f.toPx(context), 450f.toPx(context)),
-            16f.toPx(context),
-            16f.toPx(context),
+            RectF(0f.toPx(), 250f.toPx(), 200f.toPx(), 450f.toPx()),
+            16f.toPx(),
+            16f.toPx(),
             Paint().apply {
                 color = ContextCompat.getColor(context, R.color.purple_700)
                 style = Paint.Style.STROKE
@@ -50,10 +50,10 @@ class CanvasDrawView(context: Context, attrs: AttributeSet) : View(context, attr
             with(it) {
                 drawArc(
                     RectF(
-                        0f.toPx(context),
-                        250f.toPx(context),
-                        200f.toPx(context),
-                        450f.toPx(context)
+                        0f.toPx(),
+                        250f.toPx(),
+                        200f.toPx(),
+                        450f.toPx()
                     ),
                     0f,
                     -90f,
@@ -64,10 +64,10 @@ class CanvasDrawView(context: Context, attrs: AttributeSet) : View(context, attr
                 )
                 drawArc(
                     RectF(
-                        0f.toPx(context),
-                        250f.toPx(context),
-                        200f.toPx(context),
-                        450f.toPx(context)
+                        0f.toPx(),
+                        250f.toPx(),
+                        200f.toPx(),
+                        450f.toPx()
                     ),
                     90f,
                     90f,
@@ -81,10 +81,10 @@ class CanvasDrawView(context: Context, attrs: AttributeSet) : View(context, attr
 
                 drawArc(
                     RectF(
-                        0f.toPx(context),
-                        250f.toPx(context),
-                        200f.toPx(context),
-                        450f.toPx(context)
+                        0f.toPx(),
+                        250f.toPx(),
+                        200f.toPx(),
+                        450f.toPx()
                     ),
                     0f,
                     90f,
@@ -97,15 +97,15 @@ class CanvasDrawView(context: Context, attrs: AttributeSet) : View(context, attr
                 )
 
                 drawPath(Path().apply {
-                    lineTo(0f, 100f.toPx(context))
-                    rLineTo(100f.toPx(context), 0f)
+                    lineTo(0f, 100f.toPx())
+                    rLineTo(100f.toPx(), 0f)
                 }, Paint().apply {
                     color = Color.BLUE
                     strokeWidth = 32f
                     style = Paint.Style.STROKE
                 })
 
-                drawText("CanvasView", 220f.toPx(context), 80f, Paint().apply {
+                drawText("CanvasView", 220f.toPx(), 80f, Paint().apply {
                     color = Color.YELLOW
                     textSize=80f
                 })
