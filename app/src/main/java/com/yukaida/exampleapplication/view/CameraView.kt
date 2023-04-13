@@ -28,10 +28,10 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             val camera = Camera()
             camera.save()
 
-            clipRect(0f, bitmapHeight / 2, bitmapWidth + 100f+50f, bitmapHeight+50f)
+            clipRect(0f, bitmapHeight / 2, bitmapWidth + 100f + 50f, bitmapHeight + 50f)
 
             //z轴默认-8f
-            camera.setLocation(0f, 0f, -15f)
+            camera.setLocation(0f, 0f, -6 * resources.displayMetrics.density)
 //            camera.setLocation(0f,0f,-8f)
 
 //            camera.rotateY(45f)
@@ -84,7 +84,7 @@ class CameraView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 //----------------------------------------------------------
             save()
             camera.save()
-            clipRect(0f, 0f, bitmapWidth + 100f+100f, bitmapHeight / 2)
+            clipRect(0f, 0f, bitmapWidth + 100f + 100f, bitmapHeight / 2)
 
             canvas.translate(
                 (bitmapRes.width / 2).toFloat() + 150f,
