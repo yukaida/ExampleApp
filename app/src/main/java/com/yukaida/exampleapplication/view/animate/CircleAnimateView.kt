@@ -10,6 +10,11 @@ import com.yukaida.exampleapplication.utils.px
 
 class CircleAnimateView(context: Context, attributeSet: AttributeSet) :
     View(context, attributeSet) {
+
+    init {
+        setLayerType(LAYER_TYPE_HARDWARE, null)
+    }
+
     val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = Color.WHITE
     }

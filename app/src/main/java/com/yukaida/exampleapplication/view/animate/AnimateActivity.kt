@@ -3,9 +3,14 @@ package com.yukaida.exampleapplication.view.animate
 import android.animation.Keyframe
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AccelerateInterpolator
+import androidx.core.graphics.drawable.toBitmap
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.WindowCompat
 import com.yukaida.exampleapplication.R
 import com.yukaida.exampleapplication.databinding.ActivityAnimateBinding
@@ -47,7 +52,7 @@ class AnimateActivity : AppCompatActivity() {
                         .start()
             }
 
-            //AnimatorSet
+            //AnimatorSet  keyFrame关键帧
             customCameraAnimatorView.setOnClickListener {
 //                ObjectAnimator.ofFloat(it, "cameraRotateDegrees", 360f).setDuration(2000).start()
 //                ObjectAnimator.ofPropertyValuesHolder()
@@ -74,5 +79,14 @@ class AnimateActivity : AppCompatActivity() {
 
             }
         }
+
+        val bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888)
+        val drawable=bitmap.toDrawable(resources)
+        drawable.toBitmap()
+
+        val drawable2=ColorDrawable()
+        drawable2.toBitmap()
+
+
     }
 }
