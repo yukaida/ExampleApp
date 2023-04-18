@@ -80,12 +80,12 @@ class AnimateActivity : AppCompatActivity() {
             }
         }
 
-        val bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888)
-        val drawable=bitmap.toDrawable(resources)
-        drawable.toBitmap()
-
-        val drawable2=ColorDrawable()
-        drawable2.toBitmap()
+//        val bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888)
+//        val drawable=bitmap.toDrawable(resources)
+//        drawable.toBitmap()
+//
+//        val drawable2=ColorDrawable()
+//        drawable2.toBitmap()
 
 
     }

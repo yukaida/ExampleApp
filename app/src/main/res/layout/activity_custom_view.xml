@@ -12,13 +12,44 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <!--    <com.yukaida.exampleapplication.view.CanvasView-->
         <!--        android:id="@+id/customView"-->
         <!--        android:layout_width="match_parent"-->
         <!--        android:layout_height="match_parent" />-->
+
+        <ViewStub
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
+
+        <com.yukaida.exampleapplication.view.touch.TouchTestView
+            android:id="@+id/touchTestView"
+            android:tooltipText="hhh"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@color/green"
+            android:layout_marginBottom="8dp" />
+
+        <com.yukaida.exampleapplication.view.customView.SquareImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cat" />
+
+        <com.yukaida.exampleapplication.view.customView.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:hint="hintContent" />
+
+        <com.yukaida.exampleapplication.view.customView.MeshView
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginBottom="8dp" />
 
         <com.yukaida.exampleapplication.view.customView.CustomCameraView
             android:layout_width="match_parent"

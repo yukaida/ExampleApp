@@ -11,9 +11,11 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.animation.*
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.core.view.WindowCompat
 import com.yukaida.exampleapplication.R
 import com.yukaida.exampleapplication.databinding.ActivityCustomViewBinding
+import com.yukaida.exampleapplication.view.touch.TouchTestView
 import kotlin.concurrent.thread
 
 //自定义view at
@@ -32,7 +34,17 @@ class CustomViewActivity : AppCompatActivity() {
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
+        //animator
         with(vb) {
+//            vb.root.setOnClickListener {
+//                Toast.makeText(
+//                    this@CustomViewActivity,
+//                    "rootView has been clicked",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//            }
+
+
             //属性动画
             circleView.setOnClickListener {
 //                circleView.upAddProgress(10)
@@ -105,8 +117,7 @@ class CustomViewActivity : AppCompatActivity() {
 
 
         }
-
-
+        //layout
         with(vb) {
             seekbarWidth.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
                 override fun onProgressChanged(
@@ -119,7 +130,7 @@ class CustomViewActivity : AppCompatActivity() {
                         "onProgressChanged() called with: seekBar = $seekBar, progress = $progress, fromUser = $fromUser"
                     )
                     if (progress > 10) {
-                        measureLayoutView.widthInput = progress*10
+                        measureLayoutView.widthInput = progress * 10
                     }
                 }
 
@@ -142,7 +153,7 @@ class CustomViewActivity : AppCompatActivity() {
                         "onProgressChanged() called with: seekBar = $seekBar, progress = $progress, fromUser = $fromUser"
                     )
                     if (progress > 10) {
-                        measureLayoutView.heightInput = progress*10
+                        measureLayoutView.heightInput = progress * 10
                     }
                 }
 
@@ -154,6 +165,15 @@ class CustomViewActivity : AppCompatActivity() {
 
             })
 
+        }
+        //touchEvent
+        with(vb) {
+            touchTestView.performClick()
+
+            touchTestView.setOnClickListener {
+                Log.d(TAG, "onCreate: touchTestView has been click")
+            }
+//            touchTestView.callOnClick()
         }
     }
 }
