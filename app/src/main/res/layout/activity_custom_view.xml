@@ -24,17 +24,17 @@
             android:layout_width="100dp"
             android:layout_height="match_parent" />
 
-        <com.yukaida.exampleapplication.view.touch.TouchTestView
+        <com.yukaida.exampleapplication.view.touch.ScaleAbleImageView
             android:id="@+id/touchTestView"
-            android:tooltipText="hhh"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/green"
-            android:layout_marginBottom="8dp" />
+            android:tooltipText="hhh" />
 
         <com.yukaida.exampleapplication.view.customView.SquareImageView
             android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/cat" />

@@ -16,8 +16,8 @@ class SquareImageView(context: Context, attributeSet: AttributeSet) :
 
     }
 
-    val widthWant = 300f.px
-    val heightWant = 400f.px
+    val widthWant = 100f.px
+    val heightWant = 100f.px
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
